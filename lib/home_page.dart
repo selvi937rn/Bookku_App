@@ -24,10 +24,8 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Scrollable Row untuk menampilkan gambar buku
-              // Scrollable Row untuk menampilkan gambar buku
               SingleChildScrollView(
-                scrollDirection:
-                    Axis.horizontal, // Biar bisa digeser ke kanan/kiri
+                scrollDirection: Axis.horizontal, // Biar bisa digeser ke kanan/kiri
                 child: Row(
                   children: listBook.map((book) {
                     return GestureDetector(
@@ -41,15 +39,35 @@ class HomePage extends StatelessWidget {
                         );
                       },
                       child: Container(
-                        margin: const EdgeInsets.only(right: 10, top: 10), // Jarak antar gambar
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10), // Biar sudutnya melengkung
-                          child: Image.asset(
-                            book.image,
-                            width: 100, // Ukuran gambar
-                            height: 150,
-                            fit: BoxFit.cover,
-                          ),
+                        margin: const EdgeInsets.only(right: 10, top: 10), // Jarak antar buku
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10), // Biar sudutnya melengkung
+                              child: Image.asset(
+                                book.image,
+                                width: 100, // Ukuran gambar
+                                height: 150,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            const SizedBox(height: 5), // Jarak antara gambar dan rating
+                            Row(
+                              children: [
+                                Text(
+                                  book.rates.toString(), // Rating angka
+                                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(width: 5),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                  size: 16,
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     );
