@@ -57,8 +57,7 @@ class DetailPage extends StatelessWidget {
               bookInfoBox(book.language.toString(), "Language"),
             ],
           ),
-
-          //penulis
+          
           Container(
             margin: EdgeInsets.fromLTRB(18, 16, 18, 0),
             //padding: const EdgeInsets.all(10.0),
@@ -69,7 +68,7 @@ class DetailPage extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Penulis",
+                      "Author",
                       style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                     ),
                     SizedBox(width: 10),
