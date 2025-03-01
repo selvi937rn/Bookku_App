@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:book_app/book.dart';
 import 'package:flutter/material.dart';
 
@@ -55,7 +54,7 @@ class DetailPage extends StatelessWidget {
             children: [
               bookInfoBox(book.rates.toString(), "Rate"),
               bookInfoBox(book.page.toString(), "Page"),
-              bookInfoBox(book.language.toString(), "Lang"),
+              bookInfoBox(book.language.toString(), "Language"),
             ],
           ),
 
