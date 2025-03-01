@@ -58,6 +58,7 @@ class DetailPage extends StatelessWidget {
             ],
           ),
 
+          //penulis
           Container(
             margin: EdgeInsets.fromLTRB(18, 16, 18, 0),
             //padding: const EdgeInsets.all(10.0),
